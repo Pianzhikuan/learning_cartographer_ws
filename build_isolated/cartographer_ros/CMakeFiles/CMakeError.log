@@ -1,0 +1,41 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/monomania/cartographer_ws/build_isolated/cartographer_ros/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_9d0b1"
+[1/2] Building C object CMakeFiles/cmTC_9d0b1.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_9d0b1
+FAILED: cmTC_9d0b1 
+: && /usr/bin/cc   -rdynamic CMakeFiles/cmTC_9d0b1.dir/CheckSymbolExists.c.o  -o cmTC_9d0b1   && :
+CMakeFiles/cmTC_9d0b1.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x1b)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+File /home/monomania/cartographer_ws/build_isolated/cartographer_ros/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/monomania/cartographer_ws/build_isolated/cartographer_ros/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_99e08"
+[1/2] Building C object CMakeFiles/cmTC_99e08.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_99e08
+FAILED: cmTC_99e08 
+: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pthread_create  -rdynamic CMakeFiles/cmTC_99e08.dir/CheckFunctionExists.c.o  -o cmTC_99e08  -lpthreads && :
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+

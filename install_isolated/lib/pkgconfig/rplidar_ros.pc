@@ -1,0 +1,8 @@
+prefix=/home/monomania/cartographer_ws/install_isolated
+
+Name: rplidar_ros
+Description: Description of rplidar_ros
+Version: 1.9.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
