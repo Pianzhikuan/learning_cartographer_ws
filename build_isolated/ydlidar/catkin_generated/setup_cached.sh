@@ -8,5 +8,7 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/monomania/cartographer_ws/devel_isolated/ydlidar:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/monomania/cartographer_ws/devel_isolated/ydlidar/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/monomania/cartographer_ws/devel_isolated/ydlidar/lib/pkgconfig:$PKG_CONFIG_PATH"
 export ROSLISP_PACKAGE_DIRECTORIES='/home/monomania/cartographer_ws/devel_isolated/ydlidar/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/monomania/cartographer_ws/src/ydlidar:$ROS_PACKAGE_PATH"
