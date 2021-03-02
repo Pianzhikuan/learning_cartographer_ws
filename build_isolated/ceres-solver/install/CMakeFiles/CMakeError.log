@@ -1,0 +1,41 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/monomania/cartographer_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_503d8"
+[1/2] Building C object CMakeFiles/cmTC_503d8.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_503d8
+FAILED: cmTC_503d8 
+: && /usr/bin/cc    CMakeFiles/cmTC_503d8.dir/CheckSymbolExists.c.o  -o cmTC_503d8   && :
+CMakeFiles/cmTC_503d8.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x1b)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+File /home/monomania/cartographer_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/monomania/cartographer_ws/build_isolated/ceres-solver/install/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_b22b0"
+[1/2] Building C object CMakeFiles/cmTC_b22b0.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_b22b0
+FAILED: cmTC_b22b0 
+: && /usr/bin/cc -DCHECK_FUNCTION_EXISTS=pthread_create   CMakeFiles/cmTC_b22b0.dir/CheckFunctionExists.c.o  -o cmTC_b22b0  -lpthreads && :
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
